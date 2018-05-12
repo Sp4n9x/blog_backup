@@ -1,0 +1,27 @@
+blockquote
+    padding .4em 20px
+    margin .5em auto
+    border-left 4px solid rgba(147, 181, 224, .4)
+    background rgba(255,255,255,0.4)
+    box-shadow 1px 1px 1px rgba(0,0,0, .1)
+    p
+        margin .4em auto
+    blockquote
+        border-left none
+
+    blockquote = hexo-config("blockquote_style")
+    blockquote-style = 1 5px rgba(112, 134, 142, .85) rgba(255, 255, 255, .7),
+                       2 10px rgba(102,128,153,0.08) rgba(102,128,153,0.08),
+                       3 5px rgba(255, 224, 112, .6) rgba(255, 244, 204, .6),
+                       4 5px rgba(85, 138, 187, .8) rgba(255, 255, 255, .7),
+                       5 4px #ddd none,
+                       6 5px rgba(0, 153, 100, .62) none,
+                       7 3px rgba(0,0,0,0.8) none
+
+    for i in blockquote-style
+        if blockquote == i[0]
+            border-left i[1] solid i[2]
+            background i[3]
+
+    if blockquote == "6"
+        padding 10.5px 21px
